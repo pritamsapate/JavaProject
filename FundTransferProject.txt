@@ -1,0 +1,89 @@
+19/05/2023
+
+6 Transfer/Statement
+	IMPS/NEFT Transfer	(Source Account Number, Dest Account Number (must be in payee's table), and Amount to transfer (with limits), transaction date, (If RTGS then Maturity Instruction), Remarks, Finnaly, are you sure confirmation)
+	Build Statement 
+
+
+projects/Banking
+
+
+
+
+Transfer:
+	
+	NEFT (National Electronic Fund Transfer)
+		SrcAccNo
+		DstAccNo
+		Amount
+		
+		Contraint:
+			1. Beneficiary must be already added to Payees List
+			2. NEFT transactions has fees (Rs. 2.5 to 25)
+			3. NEFT payments are processed and settled in batches of half-hour.
+
+
+
+
+		Fund Transfer Workflow:
+			1. Login to portal.
+			2. Select "Fund Transfer"
+			3. Select "NEFT"
+			4. Select Beneficiary
+
+		
+
+		Beneficiary (Name, Account Number, IFSC)
+		
+
+		Charges 
+			<1,0000 	2.5
+			10,000 - <1L 	5.0
+			1L - <2L 	15
+			2L > 		25
+
+
+
+	Tables:
+		MasterAccounts
+			ID
+			AccNo
+			HolderName
+			HolderPhone
+
+		MasterPayees
+			ID
+			AccNo
+			IFSC
+			HolderName
+			HolderPhone
+
+		MasterBeneficiaryMapping
+			ID
+			AccID
+			PayeeID
+
+	
+		FundTransferTransactionsLog
+			ID
+			TxnID
+			TxnDateTime
+			TxnAmount
+			SrcAccNo
+			DstAccNo
+			Remarks
+			
+		AccTransactions
+			ID
+			AccID
+			TxnDateTime
+			Remark
+			Amount
+			CreditedDebited
+
+		FundTransferChargesLog
+			ID
+			TxnID
+			Charge
+
+			
