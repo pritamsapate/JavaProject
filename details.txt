@@ -1,0 +1,22 @@
+
+
+1. User Logs In with username and password.
+2. Application displays main menu, user select's one of three options: 1. Show Statement, 2. Transfer Funds, 3. Quit.
+	1. Show Statement:
+		1. If user selects 1, application shows "Account Statement" menu (1. Recent 10 transactions, 2. Between dates, 3. Back).
+			1. If user selects 1, application shows recent 10 transactions.
+			2. If user selects 2, application request user to enter start date and end date, once entered, it shows transactions between those 2 dates.
+			3. If user selects 3, application shows main menu.
+	2. Transfer Funds
+		1. Application displays, Transfer Funds Prompt. It asks user to enter:
+				1. Beneficiary account number.
+				2. Beneficiary IFSC code.
+				3. Beneficiary Name.
+				4. Amount to transfer.
+				5. Remarks if any.
+				It, then prompts user whether to proceed with transaction (1. Perform Transfer, 2. Quit Transfer).
+					1. Perform Transfer.
+						Application performs transaction and provides Transaction ID of this transaction.
+			
+	3. Quit:
+		1. If user selects 3, application exits.
