@@ -1,0 +1,53 @@
+CREATE TABLE AccountsMaster 
+( 
+ID int NOT NULL IDENTITY,
+AccNo int,
+HolderName varchar(30),
+HolderPhone varchar(15),
+PRIMARY KEY (ID,AccNo)
+);
+
+CREATE TABLE PayeeMaster 
+( 
+ID int NOT NULL IDENTITY,
+AccNo int,
+IFSC varchar(15),
+HolderName varchar(30),
+HolderPhone varchar(15),
+PRIMARY KEY (ID,AccNo)
+);
+
+
+CREATE TABLE MasterBeneficiaryMapping
+( 
+ID int NOT NULL IDENTITY,
+AccID int,
+PayeeID int
+);
+
+	
+CREATE TABLE FundTransferTransactionsLog
+(
+ID int NOT NULL IDENTITY,
+TxnID int,
+TxnDateTime varchar(20),
+TxnAmount float,
+SrcAccNo int,
+DstAccNo int,
+Remarks varchar(50)
+);
+
+CREATE TABLE AccTransactions(
+ID int NOT NULL IDENTITY,
+AccID int,
+TxnDateTime varchar(20),
+Remark varchar(50),
+Amount int,
+CreditedDebited varchar(10)
+);
+
+CREATE TABLE  FundTransferChargesLog(
+ID int NOT NULL IDENTITY,
+TxnID int,
+Charge float 
+);
